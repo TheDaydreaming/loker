@@ -3,7 +3,7 @@
 Aplikasi **Job Applications Tracker** ini membantu kamu mencatat, menyaring, dan mengelola riwayat lamaran kerja dengan mudah langsung di browser — **tanpa backend dan tanpa login**.  
 Data disimpan otomatis di **Local Storage** sehingga tetap aman di perangkatmu.
 
-![preview](https://via.placeholder.com/900x500?text=Job+Applications+Tracker+Preview)
+![preview] https://thedaydreaming.github.io/loker/
 
 ---
 
@@ -38,10 +38,3 @@ Menggunakan tema **dark mode minimalis**, responsif untuk desktop maupun mobile.
 - **LocalStorage API** untuk penyimpanan data
 - **CSV Parsing** manual (tanpa library)
 
----
-
-## 🚀 Cara Menjalankan
-
-1. **Clone repository** ini:
-   ```bash
-   git clone https://github.com/username/job-applications-tracker.git
