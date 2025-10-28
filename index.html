@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Job Applications Tracker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div>
+        <h1>Job Applications Tracker</h1>
+      </div>
+      <div class="actions-header">
+        <button id="importBtn" class="btn-ghost">Import CSV</button>
+        <button id="exportBtn" class="btn-ghost">Export CSV</button>
+        <button id="addBtn" class="primary">+ Tambah Lamaran</button>
+      </div>
+    </header>
+
+    <div class="controls">
+      <input id="search" type="search" placeholder="Cari perusahaan, posisi, catatan...">
+      <select id="filterStatus">
+        <option value="">Semua status</option>
+        <option value="Applied">Applied</option>
+        <option value="Interview">Interview</option>
+        <option value="Offer">Offer</option>
+        <option value="Rejected">Rejected</option>
+        <option value="Accepted">Accepted</option>
+      </select>
+      <select id="sortBy">
+        <option value="date_desc">Terbaru</option>
+        <option value="date_asc">Terlama</option>
+        <option value="company_asc">Perusahaan A→Z</option>
+        <option value="company_desc">Perusahaan Z→A</option>
+      </select>
+      <button id="clearAll" class="btn-ghost danger">Hapus Semua</button>
+    </div>
+
+    <div class="card">
+      <table id="appsTable">
+        <thead>
+          <tr>
+            <th>Perusahaan</th>
+            <th>Posisi</th>
+            <th>Tgl Lamaran</th>
+            <th>Status</th>
+            <th>Catatan</th>
+            <th>Aksi</th>
+          </tr>
+        </thead>
+        <tbody id="tbody"></tbody>
+      </table>
+      <div id="empty" class="muted" style="display:none">Belum ada data. Klik “Tambah Lamaran” untuk mulai mencatat.</div>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div id="modal" class="modal" style="display:none">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 id="modalTitle">Tambah Lamaran</h3>
+        <button id="cancelBtn" class="close-btn">&times;</button>
+      </div>
+
+      <div class="form-grid">
+        <div>
+          <label>Perusahaan</label>
+          <input id="company" placeholder="Contoh: PT Contoh" />
+        </div>
+        <div>
+          <label>Posisi</label>
+          <input id="position" placeholder="Contoh: Frontend Developer" />
+        </div>
+        <div>
+          <label>Tanggal Melamar</label>
+          <input id="appliedDate" type="date" />
+        </div>
+        <div>
+          <label>Status</label>
+          <select id="status">
+            <option>Applied</option>
+            <option>Interview</option>
+            <option>Offer</option>
+            <option>Rejected</option>
+            <option>Accepted</option>
+          </select>
+        </div>
+        <div class="full">
+          <label>Link (lowongan / email / contact)</label>
+          <input id="link" placeholder="https://... atau contact person" />
+        </div>
+        <div class="full">
+          <label>Catatan</label>
+          <textarea id="notes" placeholder="Tanggal follow-up, nama interviewer, gaji, dll."></textarea>
+        </div>
+      </div>
+
+      <div class="modal-actions">
+        <button id="saveBtn" class="primary">Simpan</button>
+      </div>
+    </div>
+  </div>
+
+  <input id="fileInput" type="file" accept="text/csv" style="display:none" />
+  <script src="script.js"></script>
+</body>
+</html>
